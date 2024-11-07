@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -14,13 +15,6 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      systemNavigationBarColor: Colors.transparent,
-      systemNavigationBarIconBrightness: Brightness.light,
-      statusBarIconBrightness: Brightness.light,
-    ));
   }
 
   void _login() {
@@ -29,6 +23,8 @@ class _LoginPageState extends State<LoginPage> {
       print('Username: $_username');
       print('Password: $_password');
       // Here you can add your login logic, e.g., API call
+      // Navigate to Medical History Page
+      Navigator.pushReplacementNamed(context, '/dashboardPage');
     }
   }
 
@@ -165,7 +161,7 @@ class _LoginPageState extends State<LoginPage> {
                 right: 0,
                 child: Center(
                   child: Text(
-                    'All Right Reserved by © Group 12 2024',
+                    'All Right Reserved by © GGYC Group 12 2024',
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.black54, // Change color as needed
